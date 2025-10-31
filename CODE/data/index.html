@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="header">
+        <h1>ESP32 SenSor</h1>     
+    </div>
+
+    <div class="render" >
+        <h2>Value SenSor & Thresold SenSor</h2>   
+        <!-- Temperature -->
+        <section class="sensor">
+            <div class="sensor-box temp">
+                <i class="fa-solid fa-temperature-three-quarters icon" style="color:#063a71;"></i>
+                <span class="label">Temperature:</span>
+                <span id="temperature">%TEMPERATURE%</span>
+                <span class="units">&deg;C</span>
+            </div>
+            <div class="threshold">
+                <span>Sensor 1</span>
+                <input class="slider" type="range" id="slider1" min="0" max="100" step="1" value="0" onchange="handleChangeSlider(this)">
+                <label>Temperature: <span id="sensor1">0</span> &deg;C</label>
+            </div>
+        </section>
+
+
+        <!-- Humidity -->
+        <section class="sensor">
+            <div class="sensor-box hum">
+                <i class="fa-solid fa-droplet" style="color: blue;" ></i>
+                <span class="label">Humidity:</span>
+                <span id="humidity">%HUMIDITY%</span>
+                <span class="units"> &percnt; </span>
+            </div>
+            <div class="threshold">
+                <span>Sensor 2</span>
+                <input class="slider" type="range" id="slider2" onchange="handleChangeSlider(this)" min="0" max="100" step="1" value="0">
+                <label>Humidity: <span id="sensor2"></span> &percnt;</label>
+            </div>
+        </section>
+
+
+        <!-- Soil Moisture -->
+        <section class="sensor">
+            <div class="sensor-box hum">
+                <i class="fa-solid fa-droplet" style="color:burlywood"></i>
+                <span class="dht-labels">Soil Moisture:</span>
+                <span id="soil_moisture">%SOIL_MOISTURE%</span>
+                <span class="units">&percnt;</span>
+            </div>
+            <div class="threshold">
+                <span>Sensor 3</span>
+                <input class="slider" type="range" id="slider3" onchange="handleChangeSlider(this)" min="0" max="100" step="1" value="0">
+                <label> Soil Moisture: <span id="sensor3"></span> &percnt;</label>
+            </div>
+        </section>
+
+
+        <!-- light  -->
+        <section class="sensor">
+            <div class="sensor-box hum">
+                <i class="fa-solid fa-sun" style="color: rgb(210, 109, 59);"></i>
+                <span class="dht-labels">Light Intensity:</span>
+                <span id="light">%LIGHT%</span>
+                <span class="units">lux</span>
+            </div>
+            <div class="threshold">
+                <span>Sensor 4</span>
+                <input class="slider" type="range" id="slider4" onchange="handleChangeSlider(this)"  min="0" max="100" step="1" value="0">
+                <label> Soil Moisture: <span id="sensor4"></span> lux</label>
+            </div>
+        </section>
+
+
+        <!-- Dust Concentration -->
+        <section class="sensor">
+            <div class="sensor-box hum">
+                <i class="fa-solid fa-wind" style="color: cadetblue;"></i>
+                <span class="dht-labels">Dust Concentration:</span>
+                <span id="dust">%DUST%</span>
+                <span class="units">&micro;g/m<sup>3</sup></span>
+            </div>
+            <div class="threshold">
+                <span>Sensor 5</span>
+                <input class="slider" type="range" id="slider5" onchange="handleChangeSlider(this)"  min="0" max="250" step="1" value="0">
+                <label> Soil Moisture: <span id="sensor5"></span> &micro;g/m<sup>3</sup></label>
+            </div>
+        </section>
+
+
+        <!-- CO2 -->
+        <section class="sensor">
+            <div class="sensor-box hum">
+                <i class="fa-solid fa-atom" style="color: aquamarine;"></i>
+                <span class="dht-labels">CO<sub>2</sub>:</span>
+                <span id="co2">%CO2%</span>
+                <span class="units">ppm</span>
+            </div>
+            <div class="threshold">
+                <span>Sensor 6</span>
+                <input class="slider" type="range" id="slider6" onchange="handleChangeSlider(this)"  min="400" max="5000" step="1" value="0">
+                <label> CO<sub>2</sub>: <span id="sensor6"></span> ppm</label>
+            </div>
+        </section>
+
+
+        <!-- NH3 -->
+        <section class="sensor">
+            <div class="sensor-box hum">
+                <i class="fa-solid fa-atom" style="color: aquamarine;"></i>
+                <span class="dht-labels">NH<sub>3</sub>:</span>
+                <span id="nh3">%NH3%</span>
+                <span class="units">ppm</span>
+            </div>
+            <div class="threshold">
+                <span>Sensor 7</span>
+                <input class="slider" type="range"  onchange="handleChangeSlider(this)" id="slider7" min="0" max="100" step="1" value="0"> 
+                <label> NH<sub>3</sub>: <span id="sensor7"></span> ppm</label>
+            </div>
+        </section>
+
+
+        <!-- No -->
+        <section class="sensor">
+            <div class="sensor-box hum">
+                <i class="fa-solid fa-atom" style="color: aquamarine;"></i>
+                <span class="dht-labels">NO:</span>
+                <span id="no">%NO%</span>
+                <span class="units">ppb</span>
+            </div>
+            <div class="threshold">
+                <span>Sensor 8</span>
+                <input class="slider" type="range" id="slider8" onchange="handleChangeSlider(this)" min="0" max="1000" step="1" value="0">
+                <label> NO: <span id="sensor8"></span> ppb</label>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

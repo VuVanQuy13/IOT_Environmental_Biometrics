@@ -1,0 +1,141 @@
+html{
+     font-family: Arial;
+     display: inline-block;
+     margin: 0px auto;
+     text-align: center;
+}
+
+body{
+    margin: 0 0 50px 0;
+}
+
+.header h1{
+    margin: 0;
+    padding: 20px;
+    justify-content: center;
+    background-color: aquamarine;
+}
+
+.render {
+  padding: 0 15px;
+}
+
+.sensor {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 25px auto;
+  padding: 15px 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 2px 2px 12px rgba(0,0,0,0.1);
+  max-width: 900px;
+}
+
+.sensor-box {
+  display: flex;
+  align-items: center;
+  font-size: 22px;
+  gap: 10px;
+}
+
+.icon {
+  font-size: 30px;
+}
+
+.threshold {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.threshold span {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  border-radius: 50px;
+  margin: 10px 0 10px 0;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #04AA6D;
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #04AA6D;
+  cursor: pointer;
+}
+
+
+
+/* ========== Responsive cho điện thoại ========== */
+@media (max-width: 768px) {
+  .sensor {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .sensor-box {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+
+  .icon {
+    font-size: 26px;
+  }
+
+  .threshold {
+    width: 100%;
+  }
+
+  .slider {
+    height: 10px;
+  }
+}
+
+/* Responsive cho màn hình rất nhỏ (dưới 480px) */
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 20px;
+  }
+
+  #grid {
+    font-size: 18px;
+  }
+
+  .thresold span {
+    font-size: 14px;
+  }
+
+  .render h2 {
+    font-size: 16px;
+  }
+}
