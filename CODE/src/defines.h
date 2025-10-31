@@ -38,6 +38,17 @@ U8GLIB_SSD1306_128X64 u8g(U8G_I2C_OPT_NONE);
 int modeSelect = 0;
 
 
+// Relay 
+#define temp_relay 8
+#define hump_relay 9
+#define soil_relay 7
+#define light_relay 6
+#define dust_relay 3
+#define co2_relay 2
+#define nh3_relay 4
+#define no_relay 5
+
+
 // Sensor virtual
 float t = 0;
 float h = 0;
@@ -62,15 +73,6 @@ float thresold_CO2 = 50;
 float thresold_NH3 = 50;
 float thresold_NO = 50;
 
-// Relay 
-#define temp_relay 8
-#define hump_relay 9
-#define soil_relay 7
-#define light_relay 6
-#define dust_relay 3
-#define co2_relay 2
-#define nh3_relay 4
-#define no_relay 5
 
 // Wifi & WebSocket
 const char* ssid = "Wifi Chua";
