@@ -6,15 +6,15 @@
 #include <BH1750.h>
 #include <Wire.h>
 #include "MQ135.h"
-#include "U8glib.h"
+#include <U8g2lib.h>
 
 // DHT11
-#define DHTPIN 13
+#define DHTPIN 27
 #define DHTTYPE DHT11
 DHT dht(DHTPIN , DHTTYPE);
 
 // Soil
-#define SOIL_PIN 34
+#define SOIL_PIN 35
 
 // SharpGP2Y10
 #define v0Pin 34
@@ -22,31 +22,31 @@ DHT dht(DHTPIN , DHTTYPE);
 SharpGP2Y10 dustSensor(v0Pin , ledPin);
 
 // MQ135 
-#define PIN_MQ135 14
+#define PIN_MQ135 26
 MQ135 mq135_sensor = MQ135(PIN_MQ135);
 
 // BH1750 && OLED
     // BH1750
-#define I2C_SDA 21
-#define I2C_SCL 22
+#define I2C_SDA 32
+#define I2C_SCL 33
 BH1750 lightMeter;
     // OLED
-U8GLIB_SSD1306_128X64 u8g(U8G_I2C_OPT_NONE);
-#define btn_Increase 12
-#define btn_Decrease 13
-#define btn_Select 10
+U8G2_SSD1306_128X64_NONAME_F_HW_I2C u8g(U8G2_R0, /* reset=*/U8X8_PIN_NONE);
+#define btn_Increase 21
+#define btn_Decrease 22
+#define btn_Select 23
 int modeSelect = 0;
 
 
 // Relay 
-#define temp_relay 8
-#define hump_relay 9
-#define soil_relay 7
-#define light_relay 6
-#define dust_relay 3
-#define co2_relay 2
-#define nh3_relay 4
-#define no_relay 5
+#define temp_relay 12
+#define hump_relay 13
+#define soil_relay 14
+#define light_relay 15
+#define dust_relay 16
+#define co2_relay 17
+#define nh3_relay 18
+#define no_relay 19
 
 
 // Sensor virtual
